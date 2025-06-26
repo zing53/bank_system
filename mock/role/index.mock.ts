@@ -528,6 +528,66 @@ const adminList = [
     ]
   },
   {
+    path: '/asset',
+    component: '#',
+    redirect: '/asset/asset-dialog',
+    name: 'Asset',
+    meta: {
+      title: 'router.asset',
+      icon: 'vi-ep:management',
+      alwaysShow: true
+    },
+    children: [
+      {
+        path: 'asset-dialog',
+        component: 'views/Example/Dialog/AssetDialog',
+        name: 'AssetDialog',
+        meta: {
+          title: 'router.asset'
+        }
+      },
+      {
+        path: 'example-add',
+        component: 'views/Example/Page/ExampleAdd',
+        name: 'ExampleAdd',
+        meta: {
+          title: 'router.exampleAdd',
+          noTagsView: true,
+          noCache: true,
+          hidden: true,
+          showMainRoute: true,
+          activeMenu: '/example/example-page'
+        }
+      },
+      {
+        path: 'example-edit',
+        component: 'views/Example/Page/ExampleEdit',
+        name: 'ExampleEdit',
+        meta: {
+          title: 'router.exampleEdit',
+          noTagsView: true,
+          noCache: true,
+          hidden: true,
+          showMainRoute: true,
+          activeMenu: '/example/example-page'
+        }
+      },
+      {
+        path: 'example-detail',
+        component: 'views/Example/Page/ExampleDetail',
+        name: 'ExampleDetail',
+        meta: {
+          title: 'router.exampleDetail',
+          noTagsView: true,
+          noCache: true,
+          hidden: true,
+          showMainRoute: true,
+          activeMenu: '/example/example-page'
+        }
+      }
+    ]
+  },
+  {
     path: '/example',
     component: '#',
     redirect: '/example/example-dialog',
@@ -739,6 +799,8 @@ const testList: string[] = [
   '/level/menu1/menu1-1/menu1-1-1',
   '/level/menu1/menu1-2',
   '/level/menu2',
+  '/asset/',
+  '/asset/asset-dialog',
   '/example',
   '/example/example-dialog',
   '/example/example-page',
@@ -898,10 +960,10 @@ const menus = [
       ]
     },
     {
-      path: '/example',
+      path: '/asset',
       component: '#',
-      redirect: '/example/example-dialog',
-      name: 'Example',
+      redirect: '/asset/asset-dialog',
+      name: 'Asset',
       status: Mock.Random.integer(0, 1),
       id: 12,
       meta: {
@@ -911,9 +973,9 @@ const menus = [
       },
       children: [
         {
-          path: 'example-dialog',
-          component: 'views/Example/Dialog/ExampleDialog',
-          name: 'ExampleDialog',
+          path: 'asset-dialog',
+          component: 'views/Example/Dialog/AssetDialog',
+          name: 'AssetDialog',
           status: Mock.Random.integer(0, 1),
           id: 13,
           permission: ['edit', 'add', 'delete'],
@@ -923,23 +985,11 @@ const menus = [
           }
         },
         {
-          path: 'example-page',
-          component: 'views/Example/Page/ExamplePage',
-          name: 'ExamplePage',
-          status: Mock.Random.integer(0, 1),
-          id: 14,
-          permission: ['edit', 'add', 'delete'],
-          meta: {
-            title: '综合示例-页面',
-            permission: ['edit', 'add', 'delete']
-          }
-        },
-        {
           path: 'example-add',
           component: 'views/Example/Page/ExampleAdd',
           name: 'ExampleAdd',
           status: Mock.Random.integer(0, 1),
-          id: 15,
+          id: 14,
           permission: ['edit', 'add', 'delete'],
           meta: {
             title: '综合示例-新增',
@@ -956,7 +1006,7 @@ const menus = [
           component: 'views/Example/Page/ExampleEdit',
           name: 'ExampleEdit',
           status: Mock.Random.integer(0, 1),
-          id: 16,
+          id: 15,
           permission: ['edit', 'add', 'delete'],
           meta: {
             title: '综合示例-编辑',
@@ -973,7 +1023,97 @@ const menus = [
           component: 'views/Example/Page/ExampleDetail',
           name: 'ExampleDetail',
           status: Mock.Random.integer(0, 1),
-          id: 17,
+          id: 16,
+          permission: ['edit', 'add', 'delete'],
+          meta: {
+            title: '综合示例-详情',
+            noTagsView: true,
+            noCache: true,
+            hidden: true,
+            showMainRoute: true,
+            activeMenu: '/example/example-page',
+            permission: ['edit', 'add', 'delete']
+          }
+        }
+      ]
+    },
+    {
+      path: '/example',
+      component: '#',
+      redirect: '/example/example-dialog',
+      name: 'Example',
+      status: Mock.Random.integer(0, 1),
+      id: 17,
+      meta: {
+        title: '综合示例',
+        icon: 'vi-ep:management',
+        alwaysShow: true
+      },
+      children: [
+        {
+          path: 'example-dialog',
+          component: 'views/Example/Dialog/ExampleDialog',
+          name: 'ExampleDialog',
+          status: Mock.Random.integer(0, 1),
+          id: 18,
+          permission: ['edit', 'add', 'delete'],
+          meta: {
+            title: '综合示例-弹窗',
+            permission: ['edit', 'add', 'delete']
+          }
+        },
+        {
+          path: 'example-page',
+          component: 'views/Example/Page/ExamplePage',
+          name: 'ExamplePage',
+          status: Mock.Random.integer(0, 1),
+          id: 19,
+          permission: ['edit', 'add', 'delete'],
+          meta: {
+            title: '综合示例-页面',
+            permission: ['edit', 'add', 'delete']
+          }
+        },
+        {
+          path: 'example-add',
+          component: 'views/Example/Page/ExampleAdd',
+          name: 'ExampleAdd',
+          status: Mock.Random.integer(0, 1),
+          id: 20,
+          permission: ['edit', 'add', 'delete'],
+          meta: {
+            title: '综合示例-新增',
+            noTagsView: true,
+            noCache: true,
+            hidden: true,
+            showMainRoute: true,
+            activeMenu: '/example/example-page',
+            permission: ['edit', 'add', 'delete']
+          }
+        },
+        {
+          path: 'example-edit',
+          component: 'views/Example/Page/ExampleEdit',
+          name: 'ExampleEdit',
+          status: Mock.Random.integer(0, 1),
+          id: 21,
+          permission: ['edit', 'add', 'delete'],
+          meta: {
+            title: '综合示例-编辑',
+            noTagsView: true,
+            noCache: true,
+            hidden: true,
+            showMainRoute: true,
+            activeMenu: '/example/example-page',
+            permission: ['edit', 'add', 'delete']
+          }
+        },
+        {
+          path: 'example-detail',
+          component: 'views/Example/Page/ExampleDetail',
+          name: 'ExampleDetail',
+          status: Mock.Random.integer(0, 1),
+          id: 22,
           permission: ['edit', 'add', 'delete'],
           meta: {
             title: '综合示例-详情',

@@ -579,6 +579,66 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
     ]
   },
   {
+    path: '/asset',
+    component: Layout,
+    redirect: '/asset/asset-dialog',
+    name: 'Asset',
+    meta: {
+      title: t('router.asset'),
+      icon: 'vi-ep:management',
+      alwaysShow: true
+    },
+    children: [
+      {
+        path: 'asset-dialog',
+        component: () => import('@/views/Example/Dialog/AssetDialog.vue'),
+        name: 'AssetDialog',
+        meta: {
+          title: t('router.asset')
+        }
+      },
+      {
+        path: 'example-add',
+        component: () => import('@/views/Example/Page/ExampleAdd.vue'),
+        name: 'ExampleAdd',
+        meta: {
+          title: t('router.exampleAdd'),
+          noTagsView: true,
+          noCache: true,
+          hidden: true,
+          canTo: true,
+          activeMenu: '/example/example-page'
+        }
+      },
+      {
+        path: 'example-edit',
+        component: () => import('@/views/Example/Page/ExampleEdit.vue'),
+        name: 'ExampleEdit',
+        meta: {
+          title: t('router.exampleEdit'),
+          noTagsView: true,
+          noCache: true,
+          hidden: true,
+          canTo: true,
+          activeMenu: '/example/example-page'
+        }
+      },
+      {
+        path: 'example-detail',
+        component: () => import('@/views/Example/Page/ExampleDetail.vue'),
+        name: 'ExampleDetail',
+        meta: {
+          title: t('router.exampleDetail'),
+          noTagsView: true,
+          noCache: true,
+          hidden: true,
+          canTo: true,
+          activeMenu: '/example/example-page'
+        }
+      }
+    ]
+  },
+  {
     path: '/example',
     component: Layout,
     redirect: '/example/example-dialog',

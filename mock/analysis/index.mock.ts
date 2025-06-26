@@ -208,12 +208,119 @@ export default [
               ]
             },
             {
+              path: '/asset',
+              component: '#',
+              redirect: '/asset/asset-dialog',
+              name: 'Asset',
+              status: Mock.Random.integer(0, 1),
+              id: 12,
+              type: 0,
+              parentId: undefined,
+              title: '资产管理',
+              meta: {
+                title: '资产管理',
+                icon: 'vi-ep:management',
+                alwaysShow: true
+              },
+              children: [
+                {
+                  path: 'asset-dialog',
+                  component: 'views/Example/Dialog/asset',
+                  name: 'AssetDialog',
+                  status: Mock.Random.integer(0, 1),
+                  id: 13,
+                  type: 1,
+                  parentId: 12,
+                  title: '产品购买',
+                  permissionList: [
+                    {
+                      id: 1,
+                      label: '新增',
+                      value: 'add'
+                    },
+                    {
+                      id: 2,
+                      label: '编辑',
+                      value: 'edit'
+                    },
+                    {
+                      id: 3,
+                      label: '删除',
+                      value: 'delete'
+                    },
+                    {
+                      id: 4,
+                      label: '查看',
+                      value: 'view'
+                    }
+                  ],
+                  meta: {
+                    title: '产品购买'
+                  }
+                },
+                {
+                  path: 'example-add',
+                  component: 'views/Example/Page/ExampleAdd',
+                  name: 'ExampleAdd',
+                  status: Mock.Random.integer(0, 1),
+                  id: 14,
+                  type: 1,
+                  parentId: 12,
+                  title: '综合示例-新增',
+                  meta: {
+                    title: '综合示例-新增',
+                    noTagsView: true,
+                    noCache: true,
+                    hidden: true,
+                    showMainRoute: true,
+                    activeMenu: '/example/example-page'
+                  }
+                },
+                {
+                  path: 'example-edit',
+                  component: 'views/Example/Page/ExampleEdit',
+                  name: 'ExampleEdit',
+                  status: Mock.Random.integer(0, 1),
+                  id: 15,
+                  type: 1,
+                  parentId: 12,
+                  title: '综合示例-编辑',
+                  meta: {
+                    title: '综合示例-编辑',
+                    noTagsView: true,
+                    noCache: true,
+                    hidden: true,
+                    showMainRoute: true,
+                    activeMenu: '/example/example-page'
+                  }
+                },
+                {
+                  path: 'example-detail',
+                  component: 'views/Example/Page/ExampleDetail',
+                  name: 'ExampleDetail',
+                  status: Mock.Random.integer(0, 1),
+                  id: 16,
+                  type: 1,
+                  parentId: 12,
+                  title: '综合示例-详情',
+                  meta: {
+                    title: '综合示例-详情',
+                    noTagsView: true,
+                    noCache: true,
+                    hidden: true,
+                    showMainRoute: true,
+                    activeMenu: '/example/example-page'
+                  }
+                }
+              ]
+            },
+            {
               path: '/example',
               component: '#',
               redirect: '/example/example-dialog',
               name: 'Example',
               status: Mock.Random.integer(0, 1),
-              id: 12,
+              id: 17,
               type: 0,
               parentId: undefined,
               title: '综合示例',
@@ -228,7 +335,7 @@ export default [
                   component: 'views/Example/Dialog/example-dialog',
                   name: 'exampleDialog',
                   status: Mock.Random.integer(0, 1),
-                  id: 13,
+                  id: 18,
                   type: 1,
                   parentId: 12,
                   title: '产品购买',
@@ -263,7 +370,7 @@ export default [
                   component: 'views/Example/Page/ExamplePage',
                   name: 'ExamplePage',
                   status: Mock.Random.integer(0, 1),
-                  id: 14,
+                  id: 19,
                   type: 1,
                   parentId: 12,
                   title: '综合示例-页面',
@@ -298,7 +405,7 @@ export default [
                   component: 'views/Example/Page/ExampleAdd',
                   name: 'ExampleAdd',
                   status: Mock.Random.integer(0, 1),
-                  id: 15,
+                  id: 20,
                   type: 1,
                   parentId: 12,
                   title: '综合示例-新增',
@@ -316,7 +423,7 @@ export default [
                   component: 'views/Example/Page/ExampleEdit',
                   name: 'ExampleEdit',
                   status: Mock.Random.integer(0, 1),
-                  id: 16,
+                  id: 21,
                   type: 1,
                   parentId: 12,
                   title: '综合示例-编辑',
@@ -334,7 +441,7 @@ export default [
                   component: 'views/Example/Page/ExampleDetail',
                   name: 'ExampleDetail',
                   status: Mock.Random.integer(0, 1),
-                  id: 17,
+                  id: 22,
                   type: 1,
                   parentId: 12,
                   title: '综合示例-详情',
